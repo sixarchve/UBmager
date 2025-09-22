@@ -1,9 +1,231 @@
-body { font-family: 'Poppins', sans-serif; background:#222831; color:#EEEEEE; margin:0; }
-.container { max-width:1100px; margin:0 auto; padding:2rem; }
-.site-header { background:#393E46; padding:1rem; }
-.brand { color:#EEEEEE; font-weight:700; text-decoration:none; }
-.brand .accent { color:#FFD369; }
-.nav a { margin-left:1rem; color:#EEEEEE; text-decoration:none; }
-.btn { border:1px solid #FFD369; padding:0.5rem 0.8rem; border-radius:6px; }
-.btn.primary { background:#FFD369; color:#222831; border:none; }
-.hero { padding:3rem 0; }
+/* Global Styles: Reset and base settings for consistency and professionalism */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensures padding doesn't add to width/height for easier layout control */
+}
+
+body {
+    font-family: 'Montserrat', sans-serif; /* Catchy yet professional font from Google Fonts */
+    line-height: 1.6;
+    color: #EEEEEE; /* Light text color for readability on dark backgrounds */
+    background-color: #222831; /* Main dark background color */
+    overflow-x: hidden; /* Prevents horizontal scroll on mobile */
+}
+
+/* Container Class: Centers content with max-width for readability on large screens */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px; /* Adds breathing room on sides */
+}
+
+/* Header/Navigation Styles: Fixed top navigation for easy section access */
+.header {
+    position: fixed; /* Sticks to top on scroll */
+    top: 0;
+    width: 100%;
+    background-color: #393E46; /* Secondary background for header */
+    z-index: 1000; /* Ensures it stays on top of other content */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 20px;
+}
+
+.nav-brand h1 {
+    color: #FFD369; /* Accent color for brand name */
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem; /* Space between menu items */
+}
+
+.nav-link {
+    color: #EEEEEE;
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.3s ease; /* Smooth color change on hover */
+}
+
+.nav-link:hover {
+    color: #FFD369; /* Accent color on hover for interactivity */
+}
+
+.nav-toggle {
+    display: none; /* Hidden on desktop */
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.hamburger-line {
+    width: 25px;
+    height: 3px;
+    background-color: #EEEEEE;
+    margin: 3px 0;
+    transition: 0.3s; /* For potential animation if expanded later */
+}
+
+/* Hero Section Styles: Full-width intro with overlay for focus */
+.hero {
+    height: 100vh; /* Full viewport height for impact */
+    background-color: #222831; /* Matches main background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero-content h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #FFD369; /* Accent for heading */
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #FFD369; /* Accent background for button */
+    color: #222831; /* Dark text for contrast */
+    padding: 1rem 2rem;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Subtle hover effects */
+}
+
+.cta-button:hover {
+    transform: translateY(-2px); /* Slight lift on hover */
+    box-shadow: 0 5px 15px rgba(255, 211, 105, 0.4); /* Glow effect */
+}
+
+/* Section Styles: Common for about, vision, mission – alternating backgrounds for visual separation */
+.section {
+    padding: 5rem 0; /* Vertical padding for spacing */
+}
+
+.section h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #FFD369; /* Accent for section headings */
+}
+
+.about {
+    background-color: #393E46; /* Secondary background for contrast */
+}
+
+.vision {
+    background-color: #222831; /* Main background */
+}
+
+.mission {
+    background-color: #393E46; /* Secondary for alternation */
+}
+
+.about p, .vision p, .mission p {
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    text-align: center;
+}
+
+.about-image-placeholder {
+    text-align: center;
+    margin-top: 2rem;
+    font-style: italic;
+    color: #FFD369; /* Accent for placeholder */
+    /* In production, replace with <img src="path/to/image.jpg" alt="Service Hub Illustration"> */
+}
+
+/* Footer Styles: Simple bottom section with links */
+.footer {
+    background-color: #393E46; /* Secondary background */
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.footer-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.footer-links a {
+    color: #EEEEEE;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #FFD369;
+}
+
+/* Responsive Design: Media queries for tablets and mobile – ensures professionalism across devices */
+/* Tablet (up to 768px) */
+@media (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        left: -100%; /* Hidden off-screen */
+        top: 70px; /* Below header */
+        flex-direction: column;
+        background-color: #393E46;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s; /* Smooth slide-in */
+        padding: 2rem 0;
+    }
+
+    .nav-menu.active {
+        left: 0; /* Show on toggle */
+    }
+
+    .nav-toggle {
+        display: flex; /* Show hamburger on tablet/mobile */
+    }
+
+    .hero-content h2 {
+        font-size: 2rem; /* Smaller heading on smaller screens */
+    }
+
+    .section {
+        padding: 3rem 0; /* Reduce padding for mobile */
+    }
+
+    .section h2 {
+        font-size: 2rem;
+    }
+}
+
+/* Mobile (up to 480px) */
+@media (max-width: 480px) {
+    .hero-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .container {
+        padding: 0 15px; /* Tighter sides on very small screens */
+    }
+}
