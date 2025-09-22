@@ -1,0 +1,9 @@
+body { font-family: 'Poppins', sans-serif; background:#222831; color:#EEEEEE; margin:0; }
+.container { max-width:1100px; margin:0 auto; padding:2rem; }
+.site-header { background:#393E46; padding:1rem; }
+.brand { color:#EEEEEE; font-weight:700; text-decoration:none; }
+.brand .accent { color:#FFD369; }
+.nav a { margin-left:1rem; color:#EEEEEE; text-decoration:none; }
+.btn { border:1px solid #FFD369; padding:0.5rem 0.8rem; border-radius:6px; }
+.btn.primary { background:#FFD369; color:#222831; border:none; }
+.hero { padding:3rem 0; }
