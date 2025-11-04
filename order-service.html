@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Service - UB Mager</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand"><h1>UB Mager</h1></div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="order-food.html" class="nav-link">Order Food</a></li>
+                <li><a href="order-service.html" class="nav-link">Order Service</a></li>
+                <li><a href="take-order.html" class="nav-link">Take Order</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="section">
+        <div class="container">
+            <h2>Order Service</h2>
+            <p>Butuh bantuan? Ajukan layanan dan kami akan hubungkan dengan penyedia terdekat.</p>
+
+            <form class="order-form" id="orderServiceForm">
+                <label for="serviceType">Service Type</label>
+                <select id="serviceType" required>
+                    <option value="">Select Service</option>
+                    <option>Cleaning</option>
+                    <option>Delivery</option>
+                    <option>Repair</option>
+                    <option>Design</option>
+                    <option>Groceries</option>
+                    <option>Other</option>
+                </select>
+
+                <label for="taskDetails">Task Details</label>
+                <textarea id="taskDetails" placeholder="Describe your task..." required></textarea>
+
+                <label for="location">Location</label>
+                <input id="location" type="text" placeholder="Enter your address or area..." required>
+
+                <label for="dateTime">Date & Time</label>
+                <input id="dateTime" type="datetime-local" required>
+
+                <label for="budget">Budget (IDR)</label>
+                <input id="budget" type="number" min="0" step="1000" placeholder="e.g. 150000" required>
+
+                <label for="contactName">Contact Name</label>
+                <input id="contactName" type="text" placeholder="Full name" required>
+
+                <label for="contactPhone">Phone / WhatsApp</label>
+                <input id="contactPhone" type="tel" placeholder="08xxxxxxxxxx" pattern="0[0-9]{9,13}" required>
+
+                <label for="attachment">Attachment (optional)</label>
+                <input id="attachment" type="file" accept=".jpg,.jpeg,.png,.pdf">
+
+                <button type="submit" class="cta-button">Request Service</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2025 UB Mager | All rights reserved.</p>
+    </footer>
+
+    <script>
+      document.getElementById('orderServiceForm').addEventListener('submit', function(e){
+        e.preventDefault();
+        alert('Request received! Kami akan mencarikan penyedia jasa terdekat.');
+        this.reset();
+      });
+    </script>
+</body>
+</html>

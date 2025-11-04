@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Food - UB Mager</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand"><h1>UB Mager</h1></div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="order-food.html" class="nav-link">Order Food</a></li>
+                <li><a href="order-service.html" class="nav-link">Order Service</a></li>
+                <li><a href="take-order.html" class="nav-link">Take Order</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="section">
+        <div class="container">
+            <h2>Order Food</h2>
+            <p>Craving something? Choose your favorite meals and we’ll handle the rest!</p>
+            <form class="order-form">
+                <label>Food Name:</label>
+                <input type="text" placeholder="Enter food item..." required>
+                <label>Quantity:</label>
+                <input type="number" min="1" value="1" required>
+                <label>Delivery Address:</label>
+                <textarea placeholder="Enter your address..." required></textarea>
+                <button type="submit" class="cta-button">Place Order</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2025 UB Mager | All rights reserved.</p>
+    </footer>
+</body>
+</html>
