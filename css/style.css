@@ -4,6 +4,10 @@
     box-sizing: border-box; /* Ensures padding doesn't add to width/height for easier layout control */
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Montserrat', sans-serif; /* Catchy yet professional font from Google Fonts */
     line-height: 1.6;
@@ -93,6 +97,7 @@ body {
     padding: 0 20px;
 }
 
+
 .hero-content h2 {
     font-size: 3rem;
     margin-bottom: 1rem;
@@ -103,9 +108,10 @@ body {
 
 .hero-content p {
     font-size: 1.2rem;
-    margin-bottom: 2rem;
+    margin: 0 auto 2rem;
     max-width: 600px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-align: center;
     z-index: 1;
 }
 
